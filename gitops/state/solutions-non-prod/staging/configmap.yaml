@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: example-configmap
+  namespace: default
+data:
+  config.properties: |
+    # Configuration file
+    database.url=jdbc:postgresql://localhost:5432/mydb
+    database.username=admin
+    database.password=secret
+    app.name=MyApplication
+    app.version=1.0.0
+  app.yaml: |
+    server:
+      port: 8080
+      host: 0.0.0.0
+    logging:
+      level: INFO
+      file: /var/log/app.log
